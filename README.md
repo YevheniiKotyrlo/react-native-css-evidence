@@ -28,3 +28,12 @@ comment shows its `3.1.0-rc.0` pair, or says why it has none.
 
 `pr-422-…-before.png` is cropped to its error surface — the stack frames below it carried
 absolute paths from my working tree.
+
+## `images/example-app/`
+
+- **before** — the library's own example app, built against `main` at the pull request's base.
+- **after** — the same app built against the pull request's head.
+
+Release builds of the app, so each APK carries its own bundle. Captured on an Android 16 emulator (API 36),
+1140×2400 @ 480dpi. Each run first reads a property the fix changes off the device's view tree and refuses
+a build whose reading disagrees with the variant it claims.
