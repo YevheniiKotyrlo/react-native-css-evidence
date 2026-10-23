@@ -37,3 +37,14 @@ absolute paths from my working tree.
 Release builds of the app, so each APK carries its own bundle. Captured on an Android 16 emulator (API 36),
 1140×2400 @ 480dpi. Each run first reads a property the fix changes off the device's view tree and refuses
 a build whose reading disagrees with the variant it claims.
+
+## `images/example-app-ios/`
+
+- **before** — the library's own example app, built against `main`.
+- **after** — the same app built against `main` with the pull request merged in.
+
+Release builds for an iPhone 12 Pro Max on iOS 27.0.1, made with Xcode 27.1, so both sides also carry what the
+example needs to build and launch there: `expo` 57.0.31 and the UIKit scene life cycle. Each capture first reads
+the installed app's build number off the device and refuses one that disagrees with the variant it claims. iOS
+hands back a frame in Display P3 when it holds wide-colour content, so every frame is converted to sRGB through
+its own profile before it is cropped.
