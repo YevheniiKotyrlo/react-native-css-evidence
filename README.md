@@ -31,12 +31,19 @@ absolute paths from my working tree.
 
 ## `images/example-app/`
 
-- **before** — the library's own example app, built against `main` at the pull request's base.
-- **after** — the same app built against the pull request's head.
+- **before** — the library's own example app, built against `main`: at the pull request's base, or, where its
+  comment says so, at the `main` its head merges into.
+- **after** — the same app built against the pull request's head, or against that `main` with the pull request
+  merged in.
 
 Release builds of the app, so each APK carries its own bundle. Captured on an Android 16 emulator (API 36),
-1140×2400 @ 480dpi. Each run first reads a property the fix changes off the device's view tree and refuses
-a build whose reading disagrees with the variant it claims.
+1140×2400 @ 480dpi. Each run first proves which build the device holds — a property the fix changes, read off
+the device's view tree, or the JavaScript bundle of the installed APK, compared byte for byte with the build's —
+and refuses one that disagrees with the variant it claims.
+
+A recording stacks the two sides' screen recordings, `before` on the left, each cut to the same window after one
+trigger and played at 25 frames a second; its two source videos, cropped as the GIF is, are in
+`captures/example-app/`.
 
 ## `images/example-app-ios/`
 
